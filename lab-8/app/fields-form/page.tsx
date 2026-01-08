@@ -25,7 +25,6 @@ export default function DynamicForm() {
 
   const handleInputChange = (id: number, field: keyof Education, value: string) => {
     setEducations(educations.map(edu => (edu.id === id ? { ...edu, [field]: value } : edu)));
-    // Xóa lỗi khi người dùng nhập
     if (errors[id]?.[field as keyof EducationErrors[number]]) {
       setErrors({
         ...errors,
